@@ -1,0 +1,32 @@
+{
+  "name": "protractor-e2e",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build:live",
+    "build": "tsc -p ../frontend",
+    "webdriver-update": "webdriver-manager update",
+    "tsc": "tsc",
+    "test": "protractor protractor.conf.js",
+    "debug": "node --inspect-brk ./node_modules/.bin/protractor conf.js",
+    "pretest": "npm run tsc && npm run webdriver-update"
+  },
+  "author": "pnp",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jasmine": "2.8.6",
+    "@types/jasminewd2": "2.0.3",
+    "@types/node": "^11.13.8",
+    "fs-extra": "^7.0.1",
+    "jasmine": "^2.4.1",
+    "jasmine-reporters": "^2.3.2",
+    "protractor-html-reporter-2": "^1.0.4",
+    "ts-node": "^8.0.3",
+    "typescript": "2.9.2"
+  },
+  "devDependencies": {
+    "@types/selenium-webdriver": "^4.0.0",
+    "protractor": "^5.4.2"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "@doc": "Presence of this file mark the folder as the root of a TypeScript project (configuration for IDE integration)",
+  "compileOnSave": false,
+  "compilerOptions-doc": "see https://www.typescriptlang.org/docs/handbook/compiler-options.html",
+  "compilerOptions-disabled-but-shouldnt": [
+    "noUnusedLocals",
+    "noUnusedParameters",
+    "strictNullChecks"
+  ],
+  "compilerOptions": {
+    "module": "commonjs",
+    "inlineSourceMap": true,
+    "outDir": "out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "strictNullChecks": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "target": "es6",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "esnext.asynciterable",
+      "es2017",
+      "dom"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "asyncAwait",
+    "plugins.ts"
+  ],
+  "angularCompilerOptions": {
+    "@doc": "Following explicit recommendations on https://v5.angular.io/guide/aot-compiler",
+    "strictInjectionParameters": true,
+    "fullTemplateTypeCheck": true,
+    "preserveWhitespaces": false
+  }
+}
