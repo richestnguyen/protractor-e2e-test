@@ -3,11 +3,7 @@
  */
 export class DateTimeUtil {
 
-    public static getNextDay(today: Date): Date {
-     return new Date();
-    }
-
-    public static getDateFromCurrent(days: number): Date {
-     return new Date();
+    public static getNextDay(): Date {
+     return new Date(new Date().setDate(1));
     }
 }

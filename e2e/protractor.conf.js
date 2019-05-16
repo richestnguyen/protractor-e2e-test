@@ -2,6 +2,7 @@ var jasmineReporters = require('jasmine-reporters');
 var htmlReporter = require('protractor-html-reporter-2');
 var fs = require('fs-extra');
 var globals = require('protractor/built');
+var HtmlReporter = require('protractor-beautiful-reporter');
 
 exports.config = {
     // The address of a running selenium server.
@@ -26,6 +27,16 @@ exports.config = {
         require('ts-node').register({
             project: 'tsconfig.json'
         });
+
+        jasmine.getEnv().addReporter(new HtmlReporter({
+            baseDirectory: 'reports',
+            screenshotsSubfolder: 'images',
+            jsonsSubfolder: 'jsons',
+            docName: 'report.html',
+            docTitle: 'Test Report'
+
+        }).getJasmine2Reporter());
+
         browser.manage().window().maximize();
     },
 

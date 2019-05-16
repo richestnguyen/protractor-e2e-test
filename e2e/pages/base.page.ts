@@ -1,5 +1,5 @@
-import { $, browser, ElementFinder, protractor } from 'protractor';
-import {ElementFinderBaseExtension} from '../extensions/element-finder-base-extension';
+import { $, browser, protractor, ElementFinder } from 'protractor';
+import { ElementFinderBaseExtension } from '../extensions/element-finder-base-extension';
 
 /**
  * The base class for all page objects in eGDD.
