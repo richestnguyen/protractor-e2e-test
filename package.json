@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build:live",
-    "build": "tsc -p ../e2e",
-    "webdriver-update": "webdriver-manager update",
-    "tsc": "tsc",
-    "test": "protractor protractor.conf.js",
-    "debug": "node --inspect-brk ./node_modules/.bin/protractor conf.js",
+    "build": "e2e/node_modules/.bin/tsc -p ../e2e",
+    "webdriver-update": "e2e/node_modules/.bin/webdriver-manager update",
+    "tsc": "e2e/node_modules/.bin/tsc",
+    "test": "e2e/node_modules/.bin/protractor protractor.conf.js",
+    "debug": "node --inspect-brk e2e/node_modules/.bin/protractor conf.js",
     "pretest": "npm run tsc && npm run webdriver-update"
   },
   "author": "pnp",

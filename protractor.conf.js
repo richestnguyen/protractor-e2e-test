@@ -1,7 +1,7 @@
 var jasmineReporters = require('jasmine-reporters');
 var htmlReporter = require('protractor-html-reporter-2');
 var fs = require('fs-extra');
-var globals = require('protractor/built');
+var globals = require('protractor/built/index');
 var HtmlReporter = require('protractor-beautiful-reporter');
 
 exports.config = {
@@ -24,7 +24,7 @@ exports.config = {
         browserName: 'firefox'
     },
     onPrepare: function() {
-        require('ts-node').register({
+        require('ts-node/dist/index').register({
             project: 'tsconfig.json'
         });
 
