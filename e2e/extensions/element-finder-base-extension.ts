@@ -1,12 +1,15 @@
 
 import { browser, by, element, ElementFinder, protractor } from 'protractor';
+import {ElementFinderButton} from './element-finder-button';
 
 declare module 'protractor/built/element' {
 
     export interface ElementFinder {
 
+        asButton(): ElementFinderButton;
+
         shouldBeHidden(): Promise<void>;
-        clickWhenClickable(): Promise<void>;
+        // clickWhenClickable(): Promise<void>;
 
         slowTypingValue(text: string, delay?: number, hasTab?: boolean): Promise<void>
         clickWhenClickable(): Promise<void>
@@ -35,6 +38,10 @@ export class ElementFinderBaseExtension {
         ElementFinderBaseExtension.alreadyExtended = true;
         const selfElement = ElementFinder.prototype;
 
+        selfElement.asButton = function(): ElementFinderButton {
+            return <ElementFinderButton>(this);
+        };
+
         selfElement.shouldBeHidden = async function(): Promise<void> {
             await expect(await this.getAttribute('class')).toContain('ng-hide');
         };
@@ -55,10 +62,10 @@ export class ElementFinderBaseExtension {
             }
         };
 
-        selfElement.clickWhenClickable = async function(): Promise<void> {
-            await this.waitUntilClickable();
-            await this.click();
-        };
+        // selfElement.clickWhenClickable = async function(): Promise<void> {
+        //     await this.waitUntilClickable();
+        //     await this.click();
+        // };
 
         selfElement.waitUntilClickable = async function(): Promise<void> {
             await browser.wait(protractor.ExpectedConditions.elementToBeClickable(this), 5000);
