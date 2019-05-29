@@ -17,15 +17,7 @@ To use Protractor types, you'll need to import `protractor`. After this is impor
 import {browser, element, by, By, $, $$, ExpectedConditions} from 'protractor';
 ```
 
-Although the Protractor configuration file can be written in javascript, creating it in typescript will have some hints. These hints and the reference configuration can be found in `lib/config.ts`. Below we are importing the Config interface and applying that interface to the config variable:
-
-```
-import {Config} from 'protractor';
-
-export let config: Config = {
-  ...
-}
-```
+Although the Protractor configuration file can be written in javascript, creating it in typescript will have some hints. These hints and the reference configuration can be found in `protractor.conf.js`.
 
 ## Ambient typings
 
